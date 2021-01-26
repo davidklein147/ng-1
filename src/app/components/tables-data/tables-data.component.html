@@ -1,0 +1,57 @@
+<tr class="row">
+    <td class="col"><b>{{ dataOfTable.date |date: 'hh:mm a'}}</b>
+        <br>
+        <small> {{getStete(dataOfTable.source)}}  {{dataOfTable.source}} </small>
+    </td>
+    <td class="col">{{ dataOfTable.due}}</td>
+    <td class="col"><b>{{ getArrival()|date: 'hh:mm a'}}</b>
+        <br>
+        <small> {{getStete(dataOfTable.dest)}} {{dataOfTable.dest}} </small>
+    </td>
+    <td class="col"><img [src]=dataOfTable.operator alt={{dataOfTable.operator}} height="20px" width="100px"></td>
+    <td class="col">{{ dataOfTable.busId}}</td>
+    <td class="col">{{ dataOfTable.price}}</td>
+    <!-- <td class="col">{{ dataOfTable.source}}</td>
+    <td class="col">{{ dataOfTable.dest}}</td> -->
+    <td class="col bot  align-items-center pt-0">
+        <button (click)="add()"  class="botb bot1" >+</button>
+        
+        <span class="bot2 " > 
+             {{_dataOfTable}}
+        </span>
+        
+            <button (click)="less()"   class="botb bot3">-</button>
+    </td>   
+</tr>
+
+<!-- <div class="row border-top">
+    <div class="border-left col-3">{{ dataOfTable.date}}    </div>
+    <div class="border-left col">z{{ dataOfTable.due}}     </div>
+    <div class="border-left col-2">{{ dataOfTable.operator}}</div>
+    <div class="border-left col">{{ dataOfTable.busId}}   </div>
+    <div class="border-left col">{{ dataOfTable.price}}   </div>
+    <div class="border-left col">{{ dataOfTable.seats}}   </div>
+    <div class="border-left col">{{ dataOfTable.source}}   </div>
+    <div class="border-left col">{{ dataOfTable.dest}}   </div>
+    
+
+    <div [ngClass]="{'bot': dataOfTable.seats > 0 }" class="col">
+        <div *ngIf ='dataOfTable.seats> 0'>
+        איך שואלים אם זה שווה למספר ולא לסטרינג
+            <button (click)="add()"  class="botb bot1" >+</button>
+        
+        <span class="bot2"> 
+             {{_dataOfTable}}
+        </span>
+        
+            <button (click)="less()"   class="botb bot3">-</button>
+        </div>
+    </div>
+</div>
+     -->
+
+<!-- <ng-container >
+    <button *ngIf="busId" class="col-1 .btn btn-outline-success">add a ticket</button>
+</ng-container> -->
+<!-- </div> -->
+

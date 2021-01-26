@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DaysComponent implements OnInit {
 
-  @Input() days:any;
+  @Input() days: any;
 
   constructor() { }
 

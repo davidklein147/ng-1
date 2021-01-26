@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <h3 class=" col-8 text-success border border-success text-center">
+            {{busId.length}} <!--{{sumTicket}}--> tickets in order, at sum {{sumPrice}} $
+        </h3>
+        <div class="col-2"></div>
+    </div>
+
+
+    <app-basket 
+    [busId]='busId'>
+    </app-basket>
+<!-- {{new date()|dd/mm/yy}} -->
+    <table class=" table text-center " >
+        <thead>
+            <tr class="row">
+                <th scope="col" class="col">departure</th>
+                <th scope="col" class="col">duratiom</th>
+                <th scope="col" class="col">arrival</th>
+                <th scope="col" class="col">operator</th>
+                <th scope="col" class="col">bus Id</th>
+                <th scope="col" class="col">price</th>
+                <!-- <th scope="col" class="col">source</th>
+                <th scope="col" class="col">dest</th> -->
+                <th scope="colgroup" class="col">add to cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor = "let data of busData">
+                <app-tables-data 
+                    (sumTickets)=sumAllTicket($event)
+                    (sumPrice)=sumAllPrice($event)
+                    (busIdAdd)= allBusId($event)
+                    (busIdLess)=lessBusId($event)
+                    [dataOfTable]="data">
+                </app-tables-data>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+<!-- <br class="clear"><br><br><br><br>
+<hr>
+
+<div class="container text-center">
+   
+    
+    <div class=" border-bottom" *ngFor = "let data of busData">
+        <app-tables-data 
+            (sumTickets)=sumAllTicket($event)
+            (sumPrice)=sumAllPrice($event)
+            (busIdAdd)= allBusId($event)
+            (busIdLess)=lessBusId($event)
+            [dataOfTable]="data">
+        </app-tables-data>
+    </div>
+</div> -->

@@ -1,3 +1,11 @@
-<app-header></app-header>
-<app-grit></app-grit>
-<app-table></app-table>
+<div class="container  mx-auto ">
+    <header class="text-center text-uppercase font-weight-bold mx-0 mt-3 bg-primary text-white font">
+        <div class="row  mx-auto">
+            <div class="col-4" [routerLink] ='["/"]'> home </div>
+            <div class="col-4" [routerLink] = '["/tickets"]'> tickets </div>
+            <div class="col-4" [routerLink] ='["/cart"]'> cart </div>
+        </div>
+        
+    </header>
+</div>
+<router-outlet></router-outlet>
