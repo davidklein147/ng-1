@@ -1,0 +1,23 @@
+.btn-orange{
+    color: #fff;
+    background-color: rgb(255, 125, 0);
+    background-color:(255, 170, 0) ;
+    
+}
+
+.btn-orange:hover{
+    background-color: rgb(255, 100, 0);
+}
+
+.hh1{
+    font-size: 2rem;
+    color: rgb(255, 125, 0);
+}
+
+.float{
+    float: left;
+}
+
+.blue{
+    color: rgb(0, 0, 225);
+overflow-x: hidden ;}

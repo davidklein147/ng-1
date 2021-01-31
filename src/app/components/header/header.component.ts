@@ -1,5 +1,6 @@
 import { Component, OnInit, Output , EventEmitter } from '@angular/core';
 import {  } from 'events';
+import { BussTataService } from 'src/app/services/buss-tata.service';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +8,6 @@ import {  } from 'events';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() {
-    this.stetesKays = Object.keys(this.STATES);
-    this.stetesNames = Object.values(this.STATES);
-    this.i = -1;
-    this.j = -1;
-    this.sourceKay = null;
-    this.targetKay = null;
-
-  }
 
   @Output() sourceStete: EventEmitter<string> = new EventEmitter<string>();
   @Output() targetStete: EventEmitter<string> = new EventEmitter<string>();
@@ -29,64 +20,15 @@ export class HeaderComponent implements OnInit {
   sourceKay: string;
   targetKay: string;
 
+  constructor(private bussData: BussTataService) {
+    this.stetesKays = bussData.STATES_LETTERS;
+    this.stetesNames =  bussData.STATES_NAMES;
+    this.i = -1;
+    this.j = -1;
+    this.sourceKay = null;
+    this.targetKay = null;
 
-
-  // stetesF():void{
-  // this.stetes = for i = 0; i<this.stetesnames.
-  // }
-
-    STATES: any  = {
-      AL: 'Alabama',
-      AK: 'Alaska',
-      AZ: 'Arizona',
-      AR: 'Arkansas',
-      CA: 'California',
-      CO: 'Colorado',
-      CT: 'Connecticut',
-      DE: 'Delaware',
-      FL: 'Florida',
-      GA: 'Georgia',
-      HI: 'Hawaii',
-      ID: 'Idaho',
-      IL: 'Illinois',
-      IN: 'Indiana',
-      IA: 'Iowa',
-      KS: 'Kansas',
-      KY: 'Kentucky',
-      LA: 'Louisiana',
-      ME: 'Maine',
-      MD: 'Maryland',
-      MA: 'Massachusetts',
-      MI: 'Michigan',
-      MN: 'Minnesota',
-      MS: 'Mississippi',
-      MO: 'Missouri',
-      MT: 'Montana',
-      NE: 'Nebraska',
-      NV: 'Nevada',
-      NH: 'New Hampshire',
-      NJ: 'New Jersey',
-      NM: 'New Mexico',
-      NY: 'New York',
-      NC: 'North Carolina',
-      ND: 'North Dakota',
-      OH: 'Ohio',
-      OK: 'Oklahoma',
-      OR: 'Oregon',
-      PA: 'Pennsylvania',
-      RI: 'Rhode Island',
-      SC: 'South Carolina',
-      SD: 'South Dakota',
-      TN: 'Tennessee',
-      TX: 'Texas',
-      UT: 'Utah',
-      VT: 'Vermont',
-      VA: 'Virginia',
-      WA: 'Washington',
-      WV: 'West Virginia',
-      WI: 'Wisconsin',
-      WY: 'Wyoming'
-  };
+  }
 
   ngOnInit(): void {
 

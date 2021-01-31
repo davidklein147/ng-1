@@ -1,11 +1,17 @@
 <header class='navbar-light bg-light container fluid'>
-    <h1 >bus tickets</h1>
+    <h1 class="hh1 mt-3">bus tickets</h1>
 
     <nav class="-flnavbar navbar-expand-lg">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 py-2">
+            <div class="col-12 col-md-6 col-lg-3 pt-1 blue text-center">
+                choos your source country
+            </div>
+        </div>
+        <div class="row">
+           
+            <div class="col-12 col-md-6 col-lg-3 py-2 px-0">
                 <select class="form-control form-control-lg"   [(ngModel)]= 'source' >
-                    <option [ngValue]="undefined" disabled selected hidden>Select source...</option>
+                    <option [ngValue]="undefined" selected hidden>Select source...</option>
                         <option *ngFor= "let stetes of stetesNames"> {{stetes}}</option>
                     
                 </select>
@@ -27,7 +33,7 @@
             
             
             <div class="col-12 col-md-2 col-lg-2 px-5 px-md-1 py-2" style="text-align: center; " >
-                <button (click)="search()" class="btn btn-success" style="margin:auto; height: 100%" type="submit">Search</button>
+                <button (click)="search()" class="btn btn-orange" style="margin:auto; height: 100%" type="submit">Search</button>
             </div>  
         </div>
     </nav>
